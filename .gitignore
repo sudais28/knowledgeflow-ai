@@ -5,7 +5,7 @@ __pycache__/
 .venv/
 venv/
 
-# Environment Variables
+# Environment
 .env
 
 # IDE
@@ -18,10 +18,10 @@ venv/
 # Logs
 *.log
 
-# Uploaded Files
+# Uploads
 uploads/
 
-# Vector Database
+# Vector Store
 vector_store/
 
 # Database
