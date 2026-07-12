@@ -4,21 +4,27 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    # Application configuration loaded from environment variables.
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
+    # Project
     APP_NAME: str = "KnowledgeFlow AI"
     APP_VERSION: str = "1.0.0"
     API_PREFIX: str = "/api/v1"
 
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        extra="ignore",
-    )
+    # Database
+    POSTGRES_SERVER: str = "localhost"
+    POSTGRES_PORT: int = 5432
+    POSTGRES_USER: str = "postgres"
+    POSTGRES_PASSWORD: str = "postgres123"
+    POSTGRES_DB: str = "knowledgeflow"
 
 
 @lru_cache
 def get_settings() -> Settings:
-    # Return a cached Settings instance
     return Settings()
 
 

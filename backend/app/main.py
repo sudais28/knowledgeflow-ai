@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.db.init_db import init_db
 
 from app.api.health import router as health_router
 from app.core.config import settings
@@ -27,3 +28,8 @@ async def root():
         "message": f"Welcome to {settings.APP_NAME}",
         "version": settings.APP_VERSION,
     }
+    
+@app.on_event("startup")
+async def startup_event():
+    init_db()
+    
