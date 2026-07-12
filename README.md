@@ -1,24 +1,56 @@
 # KnowledgeFlow AI
 
-> Enterprise AI Knowledge Platform powered by FastAPI, LangChain, LangGraph, FAISS, PostgreSQL, and Groq.
+> An AI Knowledge Platform built with FastAPI, PostgreSQL, LangChain, LangGraph, FAISS, and Groq.
 
-KnowledgeFlow AI is a production-ready Retrieval-Augmented Generation (RAG) platform that enables organizations to upload documents and interact with them using natural language. The platform combines semantic search, Large Language Models (LLMs), and modern backend engineering practices to deliver accurate, source-grounded responses.
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-Unlike a basic chatbot, KnowledgeFlow AI is designed with scalability, modularity, and maintainability in mind, following a layered architecture similar to production AI systems.
+KnowledgeFlow AI is a production-inspired Retrieval-Augmented Generation (RAG) platform that enables users to upload documents, build a searchable knowledge base, and interact with their data using natural language.
+
+The project is being developed using modern backend engineering practices, including modular architecture, environment-based configuration, SQLAlchemy ORM, JWT authentication, and scalable AI workflows.
 
 ---
 
-# Features
+# 🚧 Project Status
 
-## Authentication
+**Current Version:** v0.2
+
+**Current Sprint:** Authentication & User Management
+
+This project is actively being developed. New features are added incrementally following a production-style development workflow.
+
+---
+
+# ✅ Current Features
+
+## Backend
+
+- FastAPI Application
+- Professional Project Architecture
+- Environment Configuration (.env)
+- SQLAlchemy ORM
+- PostgreSQL Integration
+- Database Session Management
+- User Database Model
+- Automatic Database Initialization
+- Health Check Endpoint
+- REST API Foundation
+
+---
+
+# 🚧 In Progress
 
 - JWT Authentication
 - User Registration
 - User Login
-- Secure Password Hashing
+- Password Hashing (bcrypt)
 - Protected API Endpoints
 
 ---
+
+# 📅 Planned Features
 
 ## Document Management
 
@@ -27,7 +59,6 @@ Unlike a basic chatbot, KnowledgeFlow AI is designed with scalability, modularit
 - Upload TXT
 - Upload Markdown Files
 - Delete Documents
-- View Uploaded Documents
 - Multi-document Support
 
 ---
@@ -35,37 +66,24 @@ Unlike a basic chatbot, KnowledgeFlow AI is designed with scalability, modularit
 ## AI & RAG
 
 - Semantic Search
-- Retrieval-Augmented Generation (RAG)
 - HuggingFace Embeddings
 - FAISS Vector Database
-- Groq LLM Integration
-- Context-aware Responses
+- Retrieval-Augmented Generation (RAG)
+- Groq Llama 3 Integration
 - Source Citations
 - Conversation History
 
 ---
 
-## Backend
-
-- FastAPI
-- REST API
-- Pydantic Validation
-- SQLAlchemy ORM
-- PostgreSQL
-- Async Endpoints
-- Environment Configuration
-
----
-
-## Frontend (Coming Soon)
+## Frontend
 
 - React
 - Tailwind CSS
 - Chat Interface
-- Drag & Drop Upload
 - Authentication Pages
+- File Upload UI
 - Chat History
-- Responsive Design
+- Responsive Dashboard
 
 ---
 
@@ -74,30 +92,30 @@ Unlike a basic chatbot, KnowledgeFlow AI is designed with scalability, modularit
 - Docker
 - Docker Compose
 - GitHub Actions
-- Environment Variables
+- CI/CD Pipeline
 - Logging
-- Health Checks
+- AWS Deployment
 
 ---
 
-# Tech Stack
+# 🛠 Tech Stack
 
 | Category | Technologies |
 |-----------|-------------|
 | Backend | Python, FastAPI |
-| Database | PostgreSQL |
-| AI | LangChain, LangGraph |
+| Database | PostgreSQL, SQLAlchemy |
+| AI Framework | LangChain, LangGraph |
 | LLM | Groq (Llama 3.1) |
 | Embeddings | HuggingFace Sentence Transformers |
 | Vector Database | FAISS |
-| Frontend | React, Tailwind CSS |
-| Deployment | Docker, Railway, Vercel |
+| Frontend | React, Tailwind CSS *(Planned)* |
+| Deployment | Docker, AWS *(Planned)* |
 
 ---
 
-# System Architecture
+# 🏗 System Architecture
 
-```
+```text
                 React Frontend
                       │
                       ▼
@@ -113,80 +131,86 @@ Unlike a basic chatbot, KnowledgeFlow AI is designed with scalability, modularit
                       │
               Text Splitter
                       │
-              HuggingFace Embeddings
+          HuggingFace Embeddings
                       │
                    FAISS
                       │
-                Groq LLM
+                 Groq LLM
                       │
-              Final AI Response
+                 AI Response
 ```
 
 ---
 
-# Project Structure
+# 📁 Project Structure
 
-```
-knowledgeflow-ai
+```text
+knowledgeflow-ai/
 │
-├── backend
-│   ├── app
-│   ├── api
-│   ├── auth
-│   ├── config
-│   ├── database
-│   ├── models
-│   ├── schemas
-│   ├── services
-│   ├── agents
-│   ├── prompts
-│   ├── vectorstore
-│   ├── utils
-│   └── main.py
+├── backend/
+│   ├── app/
+│   │   ├── agents/
+│   │   ├── api/
+│   │   ├── core/
+│   │   ├── db/
+│   │   ├── models/
+│   │   ├── prompts/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── vectorstore/
+│   │   ├── __init__.py
+│   │   └── main.py
+│   │
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── .env.example
 │
-├── frontend
-│
-├── docs
-│
-├── architecture
-│
-├── screenshots
-│
-├── docker-compose.yml
-│
-├── Dockerfile
-│
-├── requirements.txt
-│
-├── .env.example
-│
-└── README.md
+├── frontend/
+├── architecture/
+├── docs/
+├── screenshots/
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-# Roadmap
+# 🗺 Development Roadmap
 
-## Phase 1
+## ✅ Phase 1 — Project Foundation
 
-- [ ] Project Setup
-- [ ] FastAPI
-- [ ] Configuration
-- [ ] Docker
-- [ ] PostgreSQL
+- [x] Project Setup
+- [x] FastAPI Configuration
+- [x] Professional Folder Structure
+- [x] Environment Configuration
+- [x] GitHub Repository
+- [x] Health Check Endpoint
 
 ---
 
-## Phase 2
+## ✅ Phase 2 — Database Layer
 
-- [ ] JWT Authentication
+- [x] PostgreSQL Integration
+- [x] SQLAlchemy ORM
+- [x] User Model
+- [x] Database Session Management
+- [x] Automatic Database Initialization
+
+---
+
+## 🚧 Phase 3 — Authentication
+
 - [ ] User Registration
-- [ ] Login
+- [ ] User Login
+- [ ] Password Hashing
+- [ ] JWT Authentication
 - [ ] Protected Routes
 
 ---
 
-## Phase 3
+## 📅 Phase 4 — Document Processing
 
 - [ ] PDF Upload
 - [ ] DOCX Upload
@@ -195,145 +219,149 @@ knowledgeflow-ai
 
 ---
 
-## Phase 4
+## 📅 Phase 5 — Vector Search
 
-- [ ] Embeddings
+- [ ] HuggingFace Embeddings
 - [ ] FAISS Indexing
 - [ ] Semantic Search
 - [ ] RAG Pipeline
 
 ---
 
-## Phase 5
+## 📅 Phase 6 — AI Agents
 
-- [ ] LangGraph Agent
+- [ ] LangGraph Workflow
 - [ ] Conversation Memory
 - [ ] Source Citations
 - [ ] Streaming Responses
 
 ---
 
-## Phase 6
+## 📅 Phase 7 — Frontend
 
-- [ ] React Frontend
+- [ ] React Application
 - [ ] Chat Interface
-- [ ] File Management
-- [ ] User Dashboard
+- [ ] Authentication
+- [ ] Dashboard
 
 ---
 
-## Phase 7
+## 📅 Phase 8 — Deployment
 
 - [ ] Docker Compose
 - [ ] GitHub Actions
-- [ ] Cloud Deployment
+- [ ] AWS Deployment
 - [ ] Monitoring
 
 ---
 
-# API Endpoints
-
-## Authentication
-
-```
-POST /auth/register
-POST /auth/login
-GET  /auth/me
-```
-
----
-
-## Documents
-
-```
-POST   /documents/upload
-GET    /documents
-DELETE /documents/{id}
-```
-
----
-
-## Chat
-
-```
-POST /chat
-GET  /chat/history
-DELETE /chat/history
-```
-
----
+# 🔌 Current API Endpoints
 
 ## System
 
-```
+```http
+GET /
 GET /health
 GET /docs
 ```
 
+Authentication, document management, and chat endpoints will be added in upcoming sprints.
+
 ---
 
-# Installation
+# ⚙️ Installation
+
+## Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/knowledgeflow-ai.git
+git clone https://github.com/sudais28/knowledgeflow-ai.git
 
 cd knowledgeflow-ai
-
-python -m venv .venv
-
-source .venv/bin/activate
 ```
 
-Windows
+## Backend Setup
+
+```bash
+cd backend
+
+python -m venv .venv
+```
+
+### Windows
 
 ```powershell
 .venv\Scripts\activate
 ```
 
-Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file
+### Configure Environment
+
+Create a `.env` file inside the `backend` directory.
+
+Example:
 
 ```env
-GROQ_API_KEY=your_api_key
-DATABASE_URL=postgresql://...
-SECRET_KEY=your_secret_key
+APP_NAME=KnowledgeFlow AI
+APP_VERSION=1.0.0
+API_PREFIX=/api/v1
+
+POSTGRES_SERVER=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=your_password
+POSTGRES_DB=knowledgeflow
 ```
 
-Run the application
+### Run the Application
 
 ```bash
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
+```
+
+Open your browser and visit:
+
+```
+http://127.0.0.1:8000/docs
 ```
 
 ---
 
-# Future Enhancements
+# 📸 Screenshots
 
-- Multi-Agent Architecture
-- OCR Support
-- Image Understanding
-- Audio Transcription
-- YouTube Knowledge Base
-- Website Crawler
-- Role-Based Access Control
-- Hybrid Search
-- Redis Caching
-- Elasticsearch Integration
+Screenshots of the application will be added as development progresses.
 
 ---
 
-# License
+# 🎯 Learning Objectives
+
+This project demonstrates practical experience with:
+
+- Backend Architecture
+- REST API Development
+- Database Design
+- Authentication & Authorization
+- Retrieval-Augmented Generation (RAG)
+- AI Agent Workflows
+- PostgreSQL
+- SQLAlchemy ORM
+- Docker
+- Cloud Deployment
+- Software Engineering Best Practices
+
+---
+
+# 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-# Author
+# 👨‍💻 Author
 
 **Sudais Touseef**
 
