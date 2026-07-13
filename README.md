@@ -15,9 +15,9 @@ The project is being developed using modern backend engineering practices, inclu
 
 # 🚧 Project Status
 
-**Current Version:** v0.2
+**Current Version:** v0.3
 
-**Current Sprint:** Authentication & User Management
+**Current Sprint:** Document Management & RAG Foundation
 
 This project is actively being developed. New features are added incrementally following a production-style development workflow.
 
@@ -39,15 +39,24 @@ This project is actively being developed. New features are added incrementally f
 - REST API Foundation
 
 ---
-
-# 🚧 In Progress
+## Authentication
 
 - JWT Authentication
 - User Registration
 - User Login
 - Password Hashing (bcrypt)
+- JWT Access Token Generation
 - Protected API Endpoints
+- Current User Endpoint (`/auth/me`)
+- Swagger OAuth2 Authentication
+  
+---
 
+# 🚧 In Progress
+
+- Document Upload API
+- PDF Text Extraction
+- Document Metadata Storage
 ---
 
 # 📅 Planned Features
@@ -200,13 +209,15 @@ knowledgeflow-ai/
 
 ---
 
-## 🚧 Phase 3 — Authentication
+## ✅ Phase 3 — Authentication
 
-- [ ] User Registration
-- [ ] User Login
-- [ ] Password Hashing
-- [ ] JWT Authentication
-- [ ] Protected Routes
+- [x] User Registration
+- [x] User Login
+- [x] Password Hashing
+- [x] JWT Authentication
+- [x] Protected Routes
+- [x] Current User Endpoint
+- [x] Swagger OAuth2 Integration
 
 ---
 
@@ -266,7 +277,13 @@ GET /docs
 ```
 
 Authentication, document management, and chat endpoints will be added in upcoming sprints.
+## Authentication
 
+```http
+POST /auth/register
+POST /auth/login
+GET  /auth/me
+```
 ---
 
 # ⚙️ Installation
