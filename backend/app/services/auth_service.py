@@ -5,6 +5,7 @@ from app.models.user import User
 from app.schemas.user import UserCreate, UserLogin
 from app.core.security import hash_password, verify_password
 from app.core.jwt import create_access_token
+from backend.app.schemas import user
 
 
 def register_user(db: Session, user: UserCreate):
@@ -36,6 +37,10 @@ def register_user(db: Session, user: UserCreate):
         )
 
     # Hash password
+    print("Password:", repr(user.password))
+    print("Length:", len(user.password))
+    print("Type:", type(user.password))
+
     hashed_password = hash_password(user.password)
 
     # Create user
