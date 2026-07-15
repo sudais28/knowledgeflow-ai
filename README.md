@@ -15,9 +15,9 @@ The project is being developed using modern backend engineering practices, inclu
 
 # 🚧 Project Status
 
-**Current Version:** v0.3
+Current Version: v0.4
 
-**Current Sprint:** Document Management & RAG Foundation
+Current Sprint: AI Retrieval Pipeline (Sprint 4)
 
 This project is actively being developed. New features are added incrementally following a production-style development workflow.
 
@@ -37,7 +37,11 @@ This project is actively being developed. New features are added incrementally f
 - Automatic Database Initialization
 - Health Check Endpoint
 - REST API Foundation
-
+- Document Upload API
+- Document CRUD API
+- File Download API
+- Ownership-based Authorization
+  
 ---
 ## Authentication
 
@@ -54,9 +58,12 @@ This project is actively being developed. New features are added incrementally f
 
 # 🚧 In Progress
 
-- Document Upload API
 - PDF Text Extraction
-- Document Metadata Storage
+- Text Chunking
+- Embedding Generation
+- FAISS Vector Indexing
+- Retrieval-Augmented Generation (RAG)
+  
 ---
 
 # 📅 Planned Features
@@ -69,6 +76,10 @@ This project is actively being developed. New features are added incrementally f
 - Upload Markdown Files
 - Delete Documents
 - Multi-document Support
+-  DOCX Upload
+- TXT Upload
+- Markdown Upload
+- File Versioning (Optional)
 
 ---
 
@@ -132,7 +143,7 @@ This project is actively being developed. New features are added incrementally f
                       │
       ┌───────────────┼────────────────┐
       │               │                │
- Authentication   Chat Service   Upload Service
+ Authentication   Chat Service   Document Service
       │               │                │
  PostgreSQL      LangGraph Agent  Document Loader
       │               │                │
@@ -221,12 +232,14 @@ knowledgeflow-ai/
 
 ---
 
-## 📅 Phase 4 — Document Processing
+## ✅ Phase 4 — Document Processing
 
-- [ ] PDF Upload
+- [x] PDF Upload
+- [x] Document Storage
+- [x] Document CRUD
+- [x] Download Documents
 - [ ] DOCX Upload
 - [ ] TXT Upload
-- [ ] Document Storage
 
 ---
 
@@ -283,6 +296,17 @@ Authentication, document management, and chat endpoints will be added in upcomin
 POST /auth/register
 POST /auth/login
 GET  /auth/me
+```
+
+## Documents
+
+```http
+POST   /documents/upload
+GET    /documents/
+GET    /documents/{id}
+PUT    /documents/{id}
+DELETE /documents/{id}
+GET    /documents/{id}/download
 ```
 ---
 
