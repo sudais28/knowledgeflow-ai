@@ -37,3 +37,6 @@ build/
 # Coverage
 .coverage
 htmlcov/
+
+#uploads/
+uploads/
