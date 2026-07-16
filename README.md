@@ -2,7 +2,7 @@
 
 > An AI Knowledge Platform built with FastAPI, PostgreSQL, LangChain, LangGraph, FAISS, and Groq.
 
-![Python](https://img.shields.io/badge/Python-3.14-blue)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
@@ -15,9 +15,9 @@ The project is being developed using modern backend engineering practices, inclu
 
 # 🚧 Project Status
 
-Current Version: v0.4
+Current Version: v0.5
 
-Current Sprint: AI Retrieval Pipeline (Sprint 4)
+Current Sprint: Advanced RAG & Multi-Document Support (Sprint 5)
 
 This project is actively being developed. New features are added incrementally following a production-style development workflow.
 
@@ -41,6 +41,13 @@ This project is actively being developed. New features are added incrementally f
 - Document CRUD API
 - File Download API
 - Ownership-based Authorization
+- PDF Text Extraction
+- Recursive Text Chunking
+- HuggingFace Embedding Generation
+- FAISS Vector Database
+- Semantic Document Retrieval
+- AI Chat Endpoint
+- Groq Llama 3.1 Integration
   
 ---
 ## Authentication
@@ -85,13 +92,14 @@ This project is actively being developed. New features are added incrementally f
 
 ## AI & RAG
 
-- Semantic Search
-- HuggingFace Embeddings
-- FAISS Vector Database
+- PDF Text Extraction
+- Recursive Character Text Splitting
+- HuggingFace Sentence Transformer Embeddings
+- FAISS Local Vector Store
+- Semantic Similarity Search
 - Retrieval-Augmented Generation (RAG)
-- Groq Llama 3 Integration
-- Source Citations
-- Conversation History
+- Groq Llama 3.1 Integration
+- Context-Aware Question Answering
 
 ---
 
@@ -136,28 +144,30 @@ This project is actively being developed. New features are added incrementally f
 # 🏗 System Architecture
 
 ```text
-                React Frontend
-                      │
-                      ▼
-              FastAPI REST API
-                      │
-      ┌───────────────┼────────────────┐
-      │               │                │
- Authentication   Chat Service   Document Service
-      │               │                │
- PostgreSQL      LangGraph Agent  Document Loader
-      │               │                │
-      └───────────────┼────────────────┘
-                      │
-              Text Splitter
-                      │
-          HuggingFace Embeddings
-                      │
-                   FAISS
-                      │
-                 Groq LLM
-                      │
-                 AI Response
+React Frontend (Planned)
+        │
+        ▼
+FastAPI REST API
+        │
+ ┌──────┴───────────────┐
+ │                      │
+Authentication      Document Upload
+ │                      │
+PostgreSQL       PyPDFLoader
+ │                      │
+ └──────────────┬───────┘
+                │
+        Text Splitter
+                │
+     HuggingFace Embeddings
+                │
+            FAISS Index
+                │
+      Semantic Retrieval
+                │
+         Groq Llama 3.1
+                │
+          AI Response
 ```
 
 ---
@@ -243,22 +253,31 @@ knowledgeflow-ai/
 
 ---
 
-## 📅 Phase 5 — Vector Search
+## ✅ Phase 5 — Vector Search
 
-- [ ] HuggingFace Embeddings
-- [ ] FAISS Indexing
-- [ ] Semantic Search
-- [ ] RAG Pipeline
+- [x] HuggingFace Embeddings
+- [x] FAISS Indexing
+- [x] Semantic Search
+- [x] RAG Pipeline
+      
+---
+
+## 📅 Phase 6.1 — Advanced RAG
+
+- [ ] Multi-document Support
+- [ ] Source Citations
+- [ ] Conversation Memory
+- [ ] Streaming Responses
 
 ---
 
-## 📅 Phase 6 — AI Agents
+## 📅 Phase 6.2 — AI Agents
 
 - [ ] LangGraph Workflow
 - [ ] Conversation Memory
 - [ ] Source Citations
 - [ ] Streaming Responses
-
+      
 ---
 
 ## 📅 Phase 7 — Frontend
