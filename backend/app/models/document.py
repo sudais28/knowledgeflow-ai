@@ -1,7 +1,7 @@
 from sqlalchemy import Integer, String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base_class import Base
+from app.db.base import Base
 
 
 class Document(Base):
@@ -18,7 +18,7 @@ class Document(Base):
         nullable=False,
     )
 
-    filepath: Mapped[str] = mapped_column(
+    file_path: Mapped[str] = mapped_column(
         String(500),
         nullable=False,
     )

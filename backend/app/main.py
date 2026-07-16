@@ -6,6 +6,10 @@ from app.api.auth import router as auth_router
 from app.api.health import router as health_router
 from app.core.config import settings
 
+from app.api.documents import router as document_router
+
+from app.api import chat
+
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
@@ -33,6 +37,14 @@ async def root():
 @app.on_event("startup")
 async def startup_event():
     init_db()
-    
+
+# authentication routes
 app.include_router(auth_router)
+
+# document routes
+app.include_router(document_router)
     
+# chat routes    
+app.include_router(
+    chat.router
+)

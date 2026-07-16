@@ -1,76 +1,31 @@
-# ==========================
-# FastAPI Backend
-# ==========================
-fastapi
-uvicorn[standard]
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
 
-# ==========================
-# Database
-# ==========================
-sqlalchemy
-psycopg2-binary
+sqlalchemy==2.0.42
+psycopg2-binary==2.9.10
 
-# ==========================
-# Environment Variables
-# ==========================
-python-dotenv
-pydantic
-pydantic-settings
-email-validator
+pydantic==2.11.7
+pydantic-settings==2.10.1
+email-validator==2.2.0
 
-# ==========================
-# Authentication
-# ==========================
-python-jose[cryptography]
-passlib[bcrypt]
-python-multipart
+python-multipart==0.0.20
 
-# ==========================
-# AI / LangChain
-# ==========================
-langchain
-langchain-community
-langchain-core
-langchain-text-splitters
-langgraph
+passlib[bcrypt]==1.7.4
+bcrypt==4.1.3
+python-jose[cryptography]==3.5.0
 
-# ==========================
-# Groq
-# ==========================
-langchain-groq
-groq
+langchain==0.3.27
+langchain-community==0.3.27
+langchain-huggingface==0.1.2
+langchain-groq==0.2.0
 
-# ==========================
-# Embeddings
-# ==========================
-sentence-transformers
-transformers
-torch
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0.post1
 
-# ==========================
-# Vector Database
-# ==========================
-faiss-cpu
+pypdf==4.3.1
+python-docx==1.1.2
 
-# ==========================
-# Document Processing
-# ==========================
-pypdf
-python-docx
-unstructured
-markdown
+numpy==1.26.4
+pandas==2.2.2
 
-# ==========================
-# Utilities
-# ==========================
-numpy
-pandas
-requests
-httpx
-tqdm
-
-# ==========================
-# Development
-# ==========================
-black
-isort
+python-dotenv==1.1.1
