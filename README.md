@@ -15,9 +15,10 @@ The project is being developed using modern backend engineering practices, inclu
 
 # 🚧 Project Status
 
-Current Version: v0.5
+Current Version: v0.6
 
-Current Sprint: Advanced RAG & Multi-Document Support (Sprint 5)
+Current Sprint: AI Agents & Conversation Memory
+
 
 This project is actively being developed. New features are added incrementally following a production-style development workflow.
 
@@ -33,21 +34,20 @@ This project is actively being developed. New features are added incrementally f
 - SQLAlchemy ORM
 - PostgreSQL Integration
 - Database Session Management
-- User Database Model
-- Automatic Database Initialization
-- Health Check Endpoint
-- REST API Foundation
+- JWT Authentication
 - Document Upload API
 - Document CRUD API
-- File Download API
-- Ownership-based Authorization
-- PDF Text Extraction
-- Recursive Text Chunking
+- PDF Text Extraction (PyPDFLoader)
+- Recursive Character Text Splitting
 - HuggingFace Embedding Generation
-- FAISS Vector Database
+- Per-User FAISS Vector Stores
 - Semantic Document Retrieval
-- AI Chat Endpoint
+- Retrieval-Augmented Generation (RAG)
 - Groq Llama 3.1 Integration
+- AI Chat Endpoint
+- Duplicate Upload Detection
+- Production Logging
+- Error Handling
   
 ---
 ## Authentication
@@ -95,11 +95,13 @@ This project is actively being developed. New features are added incrementally f
 - PDF Text Extraction
 - Recursive Character Text Splitting
 - HuggingFace Sentence Transformer Embeddings
-- FAISS Local Vector Store
+- Per-User FAISS Vector Stores
 - Semantic Similarity Search
 - Retrieval-Augmented Generation (RAG)
 - Groq Llama 3.1 Integration
 - Context-Aware Question Answering
+- Duplicate Upload Prevention
+- Secure User-Specific Knowledge Bases
 
 ---
 
@@ -145,29 +147,29 @@ This project is actively being developed. New features are added incrementally f
 
 ```text
 React Frontend (Planned)
-        │
-        ▼
-FastAPI REST API
-        │
- ┌──────┴───────────────┐
- │                      │
-Authentication      Document Upload
- │                      │
-PostgreSQL       PyPDFLoader
- │                      │
- └──────────────┬───────┘
-                │
-        Text Splitter
-                │
-     HuggingFace Embeddings
-                │
-            FAISS Index
-                │
-      Semantic Retrieval
-                │
-         Groq Llama 3.1
-                │
-          AI Response
+          │
+          ▼
+     FastAPI REST API
+          │
+ ┌────────┴─────────┐
+ │                  │
+Authentication   Document Upload
+ │                  │
+PostgreSQL      PyPDFLoader
+ │                  │
+ └────────┬─────────┘
+          │
+Recursive Text Splitter
+          │
+SentenceTransformer Embeddings
+          │
+ Per-User FAISS Vector Store
+          │
+ Semantic Retrieval
+          │
+Groq Llama 3.1
+          │
+ Context-Aware Answers
 ```
 
 ---
