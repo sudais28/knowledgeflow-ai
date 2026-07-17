@@ -28,5 +28,6 @@ def chat(
 ):
 
     return ask_question(
-        request.question
+        request.question,
+        current_user.id,
     )
