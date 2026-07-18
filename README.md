@@ -264,23 +264,16 @@ knowledgeflow-ai/
       
 ---
 
-## 📅 Phase 6.1 — Advanced RAG
+## 📅 Phase 6 Advanced RAG
 
-- [ ] Multi-document Support
-- [ ] Source Citations
-- [ ] Conversation Memory
-- [ ] Streaming Responses
+-  [x] Multi-document Support
+-  [x] Source Citations
+-  [x] Conversation Memory
+-  [x] Streaming Responses
+-  [x]  LangGraph Workflow
 
 ---
 
-## 📅 Phase 6.2 — AI Agents
-
-- [ ] LangGraph Workflow
-- [ ] Conversation Memory
-- [ ] Source Citations
-- [ ] Streaming Responses
-      
----
 
 ## 📅 Phase 7 — Frontend
 
