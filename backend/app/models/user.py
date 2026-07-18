@@ -1,9 +1,7 @@
 from sqlalchemy import Integer, String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base_class import Base
-
-from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 
 class User(Base):
@@ -31,9 +29,15 @@ class User(Base):
         String(255),
         nullable=False,
     )
-    
+
     documents = relationship(
-    "Document",
-    back_populates="owner",
-    cascade="all, delete-orphan",
+        "Document",
+        back_populates="owner",
+        cascade="all, delete-orphan",
+    )
+
+    sessions = relationship(
+        "ChatSession",
+        back_populates="user",
+        cascade="all, delete-orphan",
     )
