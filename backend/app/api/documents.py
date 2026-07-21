@@ -1,4 +1,7 @@
-from fastapi import APIRouter, Depends, UploadFile, File
+from http.client import HTTPException
+import traceback
+
+from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from sqlalchemy.orm import Session
 
 from app.db.session import get_db
@@ -41,11 +44,18 @@ def upload_document(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    return save_document(
-        db=db,
-        file=file,
-        owner_id=current_user.id,
-    )
+    try:
+        return save_document(
+            db=db,
+            file=file,
+            owner_id=current_user.id,
+        )
+    except Exception as e:
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
     
     
 @router.get(

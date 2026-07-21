@@ -25,18 +25,27 @@ def create_access_token(data: dict) -> str:
     return encoded_jwt
 
 def decode_access_token(token: str) -> dict:
-    
-    # Decode and validate a JWT access token.
-    
+
+    print("=" * 60)
+    print("TOKEN:", token)
+    print("SECRET:", settings.SECRET_KEY)
+    print("ALGORITHM:", settings.ALGORITHM)
+
     try:
         payload = jwt.decode(
             token,
             settings.SECRET_KEY,
             algorithms=[settings.ALGORITHM],
         )
+
+        print("PAYLOAD:", payload)
+
         return payload
 
-    except JWTError:
+    except JWTError as e:
+
+        print("JWT ERROR:", str(e))
+
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid or expired token",
