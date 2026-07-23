@@ -3,7 +3,6 @@ from pydantic import BaseModel
 
 
 class ChatRequest(BaseModel):
-    session_id: int
     question: str
 
 
@@ -38,12 +37,3 @@ class ChatMessageResponse(BaseModel):
 
     class Config:
         from_attributes = True
-
-class ChatRequest(BaseModel):
-    question: str
-    
-
-
-class ChatResponse(BaseModel):
-    answer: str
-    sources: list

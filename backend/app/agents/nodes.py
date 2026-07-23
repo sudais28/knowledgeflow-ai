@@ -56,6 +56,16 @@ def retrieve_documents(state: AgentState):
         k=4,
     )
 
+    print("=" * 60)
+    print(f"Retrieved {len(docs)} documents")
+
+    for i, doc in enumerate(docs):
+        print(f"\nDocument {i + 1}")
+        print("Metadata:", doc.metadata)
+        print(doc.page_content[:300])
+
+    print("=" * 60)
+
     context = "\n\n".join(
         doc.page_content for doc in docs
     )
@@ -66,66 +76,6 @@ def retrieve_documents(state: AgentState):
     }
 
 
-def grade_documents(state: AgentState):
-
-    if len(state["documents"]) == 0:
-        return {
-            "is_relevant": False,
-        }
-
-    prompt = ChatPromptTemplate.from_template(
-        """
-You are a retrieval evaluator.
-
-Determine whether the retrieved context is relevant to the user's question.
-
-Reply with ONLY one word:
-
-YES
-
-or
-
-NO
-
-Question:
-{question}
-
-Context:
-{context}
-"""
-    )
-
-    chain = prompt | llm
-
-    response = chain.invoke(
-        {
-            "question": state["question"],
-            "context": state["context"],
-        }
-    )
-
-    answer = response.content.strip().upper()
-
-    return {
-        "is_relevant": answer == "YES",
-    }
-
-
-def should_answer(state: AgentState):
-
-    if state["is_relevant"]:
-        return "generate_answer"
-
-    return "no_answer"
-
-
-def should_generate(state: AgentState):
-
-    if len(state["documents"]) == 0:
-        return "no_answer"
-
-    return "generate_answer"
-
 
 def generate_answer(state: AgentState):
 
@@ -133,11 +83,15 @@ def generate_answer(state: AgentState):
         """
 You are KnowledgeFlow AI.
 
-Answer ONLY using the provided context.
+You MUST answer ONLY using the provided context.
 
-If the answer is not present in the context, reply exactly:
+If the context contains the answer,
+answer naturally.
 
-"I don't know based on the uploaded documents."
+If the answer truly cannot be found in the context,
+reply exactly:
+
+I don't know based on the uploaded documents.
 
 Context:
 {context}
@@ -158,13 +112,11 @@ Answer:
         }
     )
 
+    print("=" * 60)
+    print("LLM ANSWER")
+    print(response.content)
+    print("=" * 60)
+
     return {
         "answer": response.content.strip(),
-    }
-
-
-def no_answer(state: AgentState):
-
-    return {
-        "answer": "I don't know based on the uploaded documents."
     }
