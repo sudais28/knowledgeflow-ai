@@ -28,26 +28,31 @@ This project is actively being developed. New features are added incrementally f
 
 ## Backend
 
-- FastAPI Application
-- Professional Project Architecture
-- Environment Configuration (.env)
+## Backend
+
+- FastAPI REST API
+- Modular Project Architecture
+- Environment-Based Configuration
 - SQLAlchemy ORM
 - PostgreSQL Integration
-- Database Session Management
 - JWT Authentication
-- Document Upload API
-- Document CRUD API
+- User Registration & Login
+- Protected API Endpoints
+- PDF Upload & Storage
+- Document CRUD (Upload, List, Download, Delete)
 - PDF Text Extraction (PyPDFLoader)
 - Recursive Character Text Splitting
-- HuggingFace Embedding Generation
+- HuggingFace Sentence Transformer Embeddings
 - Per-User FAISS Vector Stores
-- Semantic Document Retrieval
+- Semantic Similarity Search
 - Retrieval-Augmented Generation (RAG)
+- LangGraph Workflow
 - Groq Llama 3.1 Integration
-- AI Chat Endpoint
-- Duplicate Upload Detection
+- AI Question Rewriting
+- Context-Aware Document Question Answering
+- Source Citations
 - Production Logging
-- Error Handling
+- Global Error Handling
   
 ---
 ## Authentication
@@ -57,19 +62,12 @@ This project is actively being developed. New features are added incrementally f
 - User Login
 - Password Hashing (bcrypt)
 - JWT Access Token Generation
-- Protected API Endpoints
+- Protected Routes
 - Current User Endpoint (`/auth/me`)
 - Swagger OAuth2 Authentication
   
 ---
 
-# 🚧 In Progress
-
-- PDF Text Extraction
-- Text Chunking
-- Embedding Generation
-- FAISS Vector Indexing
-- Retrieval-Augmented Generation (RAG)
   
 ---
 
@@ -107,14 +105,15 @@ This project is actively being developed. New features are added incrementally f
 
 ## Frontend
 
-- React
+- React + Vite
 - Tailwind CSS
-- Chat Interface
 - Authentication Pages
-- File Upload UI
-- Chat History
-- Responsive Dashboard
-
+- Dashboard Layout
+- Sidebar Navigation
+- PDF Upload UI
+- Document Management
+- AI Chat Interface
+  
 ---
 
 ## DevOps
@@ -250,9 +249,6 @@ knowledgeflow-ai/
 - [x] Document Storage
 - [x] Document CRUD
 - [x] Download Documents
-- [ ] DOCX Upload
-- [ ] TXT Upload
-
 ---
 
 ## ✅ Phase 5 — Vector Search
@@ -277,10 +273,10 @@ knowledgeflow-ai/
 
 ## 📅 Phase 7 — Frontend
 
-- [ ] React Application
-- [ ] Chat Interface
-- [ ] Authentication
-- [ ] Dashboard
+- [x] React Application
+- [x] Chat Interface
+- [x] Authentication
+- [x] Dashboard
 
 ---
 
@@ -420,6 +416,6 @@ This project is licensed under the MIT License.
 
 **Sudais Touseef**
 
-Computer Science Graduate | AI Engineer | Backend Developer
+ AI Engineer | Backend Developer
 
 Interested in building scalable AI systems, intelligent agents, Retrieval-Augmented Generation (RAG), and production-ready backend applications.
